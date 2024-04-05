@@ -1,30 +1,52 @@
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Navbar from "../../components/Navbar.jsx";
+import Registration from "../register/Registration.jsx";
+import Hero from "../../components/Hero.jsx";
+import Features from "../../components/Features.jsx";
+import Footer from "../../components/Footer.jsx";
+import Info from "../../components/Info.jsx";
 
 const Welcome = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
+  // const location = useLocation(); // Get the current location object
+
+  // Render the modal only when the route matches "/registration"
+  // const isRegistrationRoute = location.pathname === '/registration';
+
   return (
-    <div className="bg-gray-100 min-h-screen flex flex-col justify-between">
-      <header className="p-4 flex justify-end">
-        <Link to="/registration">
-          <button>Create account</button>
-        </Link>
+    <div className="bg-gray-950  min-h-screen flex flex-col justify-center">
+      <header className="h-12 md:mb-10 ">
+        <Navbar />
       </header>
-      <main className="flex-1 p-8">
-        <h1 className="text-4xl font-bold mb-4">UNICONN— A SOCIAL MEDIA SITE FOR UNIVERSITY</h1>
-        <p className="text-lg mb-4">
-          Developing a university-focused social networking platform facilitating student connections, information exchange, and collaboration.
-        </p>
-        <p className="text-lg mb-4">
-          Our platform will aim to replace outdated email culture and simplify information management for students, faculty, and college staff.
-        </p>
-        <p className="text-lg mb-4">
-          Ensuring that students never miss vital information or notifications from college authorities also brings students together, making it simpler to share resources, connect with others, and work together.
-        </p>
+      <main className="flex-1  justify-center items-center  p-4 md:p-8">
+        <div className="flex justify-center mt-4 md:mt-12">
+          <Hero />
+        </div>
+        <div className="flex justify-center mt-8 md:mt-24">
+          <Features />
+        </div>
+        <div className="flex justify-center text-center mt-8 md:mt-24">
+          <Info />
+        </div>
       </main>
       <footer className="p-4">
-      <Link to="/registration">
-          <button>Create account</button>
-     </Link>
+        <div className="flex justify-center w-screen mt-8 md:mt-24">
+          <Footer />
+        </div>
       </footer>
+      {/* {isRegistrationRoute && <Registration onClose={() => {}} />} Render the modal when on the /registration route */}
+      {showModal && <Registration onClose={closeModal} />}{" "}
+      {/* Render the Registration page as a modal when showModal is true */}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router,Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router,Routes, Route, Navigate, useLocation} from "react-router-dom";
 import { NextUIProvider } from "@nextui-org/react";
 import Welcome from "./pages/welcome/Welcome";
 import Registration from "./pages/register/Registration";

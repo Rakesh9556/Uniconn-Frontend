@@ -13,13 +13,21 @@
     "@iconify/icons-lucide": "^1.2.135",
     "@iconify/react": "^4.1.1",
     "@nextui-org/react": "^2.2.10",
+    "@react-three/fiber": "^8.16.1",
+    "@tsparticles/react": "^3.0.0",
     "axios": "^1.6.8",
-    "framer-motion": "^11.0.15",
+    "clsx": "^2.1.0",
+    "framer-motion": "^11.0.24",
     "lucide-react": "^0.363.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
-    "react-toastify": "^10.0.5"
+    "react-simple-typewriter": "^5.0.1",
+    "react-snowfetti": "^1.2.4",
+    "react-toastify": "^10.0.5",
+    "tailwind-merge": "^2.2.2",
+    "three": "^0.163.0",
+    "typescript": "^5.4.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",
